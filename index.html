@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunny — два нові дизайни сайту</title>
+<meta name="description" content="Концепти редизайну sunny-tm.com у світлих сонячних тонах: «Ранок» і «Полудень».">
+<meta property="og:title" content="Sunny — два нові дизайни сайту">
+<meta property="og:description" content="«Ранок» і «Полудень» — концепти редизайну sunny-tm.com у світлих сонячних тонах.">
+<meta property="og:image" content="https://sunny-tm.com/image/catalog/banners/SlaiderCOULISSE1+++.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:#FFFBEF;color:#2B2117;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+.glow{position:fixed;left:50%;top:-420px;width:1100px;height:900px;margin-left:-550px;border-radius:50%;background:radial-gradient(circle,#FFD84A 0,#FFE58A66 35%,transparent 68%);pointer-events:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;position:relative}
+header{display:flex;align-items:center;gap:10px;padding:30px 0;font-family:Unbounded,sans-serif;font-weight:700;font-size:20px}
+header svg{width:34px;height:34px}
+h1{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(34px,6vw,72px);line-height:1.04;letter-spacing:-.03em;margin-top:40px;max-width:900px}
+.lead{font-size:18px;line-height:1.6;max-width:640px;margin-top:20px;color:#6E6152}
+.lead a{color:inherit}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:52px 0 40px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 1px 0 #F1E3C2,0 30px 60px -40px #9a6a0080;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 1px 0 #F1E3C2,0 40px 70px -36px #9a6a00a0}
+.prev{aspect-ratio:16/10;position:relative;overflow:hidden}
+.body{padding:24px 28px 30px;display:flex;flex-direction:column;gap:8px}
+.tag{font-size:12px;font-weight:800;letter-spacing:.12em;color:#F25C2A}
+.body h2{font-family:Unbounded,sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em}
+.body p{color:#6E6152;line-height:1.55}
+.go{margin-top:10px;display:inline-flex;align-self:flex-start;background:#FFC21A;border-radius:999px;padding:12px 22px;font-weight:800}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.chips span{font-size:12px;font-weight:700;background:#FFF4D6;border-radius:999px;padding:4px 10px}
+/* мініатюра А */
+.pa{background:#FFF9EC;padding:22px}
+.pa .bar{height:10px;background:#FFC21A;margin:-22px -22px 14px}
+.pa .nav{display:flex;gap:6px;align-items:center;margin-bottom:22px}.pa .nav b{width:22px;height:22px;border-radius:50%;background:#FFC21A}.pa .nav i{height:8px;width:38px;border-radius:9px;background:#F1E3C2}.pa .nav i:last-child{margin-left:auto;width:60px;height:16px;background:#FFC21A}
+.pa .row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+.pa .t{font-family:Unbounded;font-weight:700;font-size:clamp(18px,2.6vw,30px);line-height:1.05}.pa .t em{font-style:normal;color:#F25C2A}
+.pa .img{aspect-ratio:5/4;border-radius:22px 22px 22px 70px;background:url("https://sunny-tm.com/image/catalog/banners/SlaiderCOULISSE1+++.jpg") center/cover}
+.pa .btns{display:flex;gap:6px;margin-top:12px}.pa .btns i{height:20px;width:70px;border-radius:99px;background:#FFC21A}.pa .btns i+i{background:none;box-shadow:inset 0 0 0 2px #2B2117}
+/* мініатюра Б */
+.pb{background:#FFFDF6;display:grid;grid-template-columns:22% 1fr}
+.pb .side{border-right:1px solid #ECE5CF;padding:18px 12px;display:flex;flex-direction:column;gap:8px;background:#fff}
+.pb .side b{width:22px;height:22px;border-radius:50%;background:#FFC21A;margin-bottom:12px}
+.pb .side i{height:6px;border-radius:2px;background:#ECE5CF}.pb .side i.on{background:#1F1D18;width:70%}
+.pb .main{padding:24px 22px;position:relative;overflow:hidden}
+.pb .main:before{content:"";position:absolute;right:-80px;top:-110px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,#FFE45C,#FFE45C66 40%,transparent 70%)}
+.pb .t{position:relative;font-family:Fraunces,serif;font-size:clamp(22px,3.2vw,40px);line-height:1;letter-spacing:-.02em}.pb .t em{background:linear-gradient(transparent 60%,#FFE45C 60%)}
+.pb .imgs{position:relative;display:grid;grid-template-columns:1.5fr 1fr;gap:8px;margin-top:16px}
+.pb .imgs i{aspect-ratio:16/10;border-radius:3px;background:url("https://sunny-tm.com/image/catalog/banners/Refleksol_kafe+.jpg") center/cover}
+.pb .imgs i+i{background-image:url("https://sunny-tm.com/image/catalog/banners/SlaiderCOULISSE1+++.jpg")}
+footer{border-top:1px solid #F1E3C2;padding:22px 0 40px;color:#6E6152;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:inherit}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+  <header><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="9" fill="#FFC21A"/><g stroke="#FF8A1F" stroke-width="3" stroke-linecap="round"><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3.5 3.5M28.5 28.5L32 32M8 32l3.5-3.5M28.5 11.5L32 8"/></g></svg>SUNNY</header>
+  <h1>Два нові дизайни сайту у сонячних тонах</h1>
+  <p class="lead">Концепти редизайну <a href="https://sunny-tm.com/uk" target="_blank" rel="noopener">sunny-tm.com</a> для всіх розділів: головна, каталог, про компанію, наші роботи, дилерам, відгуки, питання-відповідь, контакти, новини, акції, статті та сертифікати. Весь контент — з чинного сайту.</p>
+
+  <div class="grid">
+    <a class="card" href="a/">
+      <div class="prev pa"><div class="bar"></div><div class="nav"><b></b><i></i><i></i><i></i><i></i><i></i></div><div class="row"><div><div class="t">Для Вас ми <em>підкорюємо</em> сонце</div><div class="btns"><i></i><i></i></div></div><div class="img"></div></div></div>
+      <div class="body"><span class="tag">ДИЗАЙН А</span><h2>«Ранок»</h2><p>Теплий кремовий фон, сонячно-жовті акценти й м'які округлі картки. Дружній і яскравий — для покупців, які обирають штори додому.</p>
+        <div class="chips"><span>Слайдер на головній</span><span>Картки каталогу</span><span>Пошук салонів</span></div><span class="go">Відкрити «Ранок» →</span></div>
+    </a>
+    <a class="card" href="b/">
+      <div class="prev pb"><div class="side"><b></b><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="main"><div class="t">Для Вас ми<br>підкорюємо <em>сонце.</em></div><div class="imgs"><i></i><i></i></div></div></div>
+      <div class="body"><span class="tag">ДИЗАЙН Б</span><h2>«Полудень»</h2><p>Світлий редакційний стиль: лимонне сяйво, шрифт із засічками, бічне меню та чисті лінії. Стримано-преміальний — пасує до Coulisse і зовнішнього сонцезахисту.</p>
+        <div class="chips"><span>Бічна навігація</span><span>Каталог-список</span><span>Журнальна типографіка</span></div><span class="go">Відкрити «Полудень» →</span></div>
+    </a>
+  </div>
+
+  <footer><span>Концепти редизайну · жовтень 2026 · форми працюють у демо-режимі</span><span>Оригінал: <a href="https://sunny-tm.com/uk" target="_blank" rel="noopener">sunny-tm.com</a></span></footer>
+</div>
+</body>
+</html>
