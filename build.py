@@ -223,12 +223,27 @@ def shell_b(slug, body):
 <div class="fbot"><span>2026 © Sunny. Всі права захищені</span><form class="sub" data-demo><input type="email" placeholder="Підписка на новини" required><button>→</button><p class="ok" hidden>Дякуємо!</p></form></div></div></footer></div>
 {svc_modal()}<script src="../app.js"></script></body></html>''')
 
+GH = 'https://faradeycom.github.io/'
+SITES = {'a': ('sunny-ranok', shell_a, 'b'), 'b': ('sunny-poluden', shell_b, 'a')}
+
 def build():
-    for d, shell in (('a', shell_a), ('b', shell_b)):
+    for d, (repo, shell, other) in SITES.items():
+        # 1) підпапка загального сайту вибору: /a/, /b/
         os.makedirs(os.path.join(ROOT, d), exist_ok=True)
+        # 2) самостійний сайт dist/<repo>/ — публікується окремим репозиторієм
+        out = os.path.join(ROOT, 'dist', repo)
+        os.makedirs(out, exist_ok=True)
+        shutil.copy(os.path.join(ROOT, d, 'style.css'), out)
+        shutil.copy(os.path.join(ROOT, 'app.js'), out)
         for slug, *_ in PAGES:
-            open(os.path.join(ROOT, d, href(slug)), 'w', encoding='utf-8', newline='\n').write(shell(slug, BODIES[slug]()))
-    print('ok', len(PAGES) * 2, 'сторінок')
+            page = shell(slug, BODIES[slug]())
+            open(os.path.join(ROOT, d, href(slug)), 'w', encoding='utf-8', newline='\n').write(page)
+            alone = (page.replace('src="../app.js"', 'src="app.js"')
+                         .replace('<a href="../">обрати інший дизайн</a>',
+                                  f'<a href="{GH}{SITES[other][0]}/">інший дизайн</a> · <a href="{GH}sunny-redesign/">усі варіанти</a>'))
+            open(os.path.join(out, href(slug)), 'w', encoding='utf-8', newline='\n').write(alone)
+        open(os.path.join(out, '.nojekyll'), 'w').close()
+    print('ok', len(PAGES) * 4, 'pages')
 
 if __name__ == '__main__':
     build()
